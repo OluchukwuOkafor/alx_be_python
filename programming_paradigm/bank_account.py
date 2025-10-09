@@ -2,9 +2,11 @@ class BankAccount:
     def __init__(self, balance=0):
         self.balance = balance
 
-    def deposit(self, amount):
-        self.balance += amount
-        print(f"Deposited: ${amount}")
+     def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            return f"Deposited: ${amount}"
+        return None
 
     def withdraw(self, amount):
         if amount > self.balance:
